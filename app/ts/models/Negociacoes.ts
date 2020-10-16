@@ -1,4 +1,5 @@
 class Negociacoes {
+
     private _negociacoes: Negociacao[] = [];
 
     adiciona(negociacao: Negociacao){
@@ -6,8 +7,9 @@ class Negociacoes {
         this._negociacoes.push(negociacao);
     }
 
-    paraArray(){
+    paraArray() : Negociacao[] {
 
-        return this._negociacoes;
+        //progamacao defensiva, retorna um novo array toda vez que paraArray for chamado.
+        return [].concat(this._negociacoes);
     }
 }
